@@ -14,7 +14,7 @@ func BenchmarkInitialize(b *testing.B) {
 }
 
 func BenchmarkThink(b *testing.B) {
-	D := DP.Initialize(5)
+	D := diphi()
 	l := list.New()
 	for i := 1; i <= 5; i++ {
 		l.PushBack(i)
@@ -25,24 +25,20 @@ func BenchmarkThink(b *testing.B) {
 }
 
 func BenchmarkCheckAvailability(b *testing.B) {
-	D := DP.Initialize(5)
-	l := list.New()
-	for i := 1; i <= 5; i++ {
-		l.PushBack(i)
-	}
+	D := diphi()
 	for i := 0; i < b.N; i++ {
-		D.CheckAvailability(2)
+		D.CheckAvailability(1)
 	}
 
 }
 
-func BenchmarkEat(b *testing.B) {
-	D := DP.Initialize(5)
-	l := list.New()
-	for i := 1; i <= 5; i++ {
-		l.PushBack(i)
-	}
+func BenchmarkTest(b *testing.B) {
+	D := diphi()
 	for i := 0; i < b.N; i++ {
-		D.Eat(2)
+		D.Test(2)
 	}
+}
+func diphi() *DP.Philosophers {
+	D := DP.Initialize(5)
+	return D
 }
