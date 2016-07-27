@@ -1,4 +1,5 @@
 PASS
 BenchmarkInitialize-4       	  200000	      5995 ns/op	    1380 B/op	      22 allocs/op
 BenchmarkThink-4            	 1000000	      5155 ns/op	     510 B/op	       1 allocs/op
-BenchmarkCheckAvailability-4	
+BenchmarkCheckAvailability-4	signal: interrupt
+FAIL	command-line-arguments	514.512s
